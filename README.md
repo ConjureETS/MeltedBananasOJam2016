@@ -15,9 +15,11 @@ Core gameplay principles
 ###Task list
 
 * Playable character implementation
-  * First person view (w/ controls)
-  * Movement (jumping, head bob, etc)
+  * First person view (w/ controls of view and headbobbing) *Assigned to Alex*
+  * Movement (jumping, etc) *Assigned to Kerby*
 * Gameplay mechanics
   * Fog of war
-  * Falling tiles
-  * Stay a while mechanic
+  * Falling tiles *Assigned to Hugo*
+  * Stay a while mechanic *Assigned to Antoine*
+
+
