@@ -48,6 +48,7 @@
 				col.r = col.r+ _Blindness;
 				col.g = col.g+_Blindness;
 				col.b = col.b+_Blindness;
+				//col.a = (c.r + c.b + c.g) / 3;
 				// just invert the colors
 				//col = 1 - col;
 				return col;
