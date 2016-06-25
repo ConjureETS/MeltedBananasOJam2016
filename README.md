@@ -22,4 +22,7 @@ Core gameplay principles
   * Falling tiles *Assigned to Hugo*
   * Stay a while mechanic *Assigned to Antoine*
 
+###Possible traps/pick ups
+* Slow down time
+* Transparent structures
 
