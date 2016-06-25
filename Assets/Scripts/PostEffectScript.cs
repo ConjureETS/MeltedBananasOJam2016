@@ -6,6 +6,7 @@ public class PostEffectScript : MonoBehaviour {
     public float blindness = 0.5f;
     public Rigidbody character;
     public float blindnessRatio = 0.1f;
+    public float blindnessSpeed = 0.1f;
     public float velocity;
 	// Use this for initialization
 	void Start () {
@@ -18,15 +19,16 @@ public class PostEffectScript : MonoBehaviour {
 	}
     void OnRenderImage(RenderTexture src, RenderTexture dest)
     {
+        Vector2 planarVelocity = new Vector3(character.velocity.x, 0, character.velocity.z);
         if (character.velocity.magnitude > 0)
         {
-            blindness = character.velocity.normalized.magnitude * blindnessRatio;
+            blindness =  1 * blindnessRatio;
             blindnessRatio += 0.01f;
         }
         else if (blindnessRatio >= 0.1f)
         {
-            blindness = character.velocity.normalized.magnitude * blindnessRatio;
-            blindnessRatio = 0.1f;
+            blindnessRatio -= 0.01f;
+            blindness = 1 * blindnessRatio;
         }
        
 
