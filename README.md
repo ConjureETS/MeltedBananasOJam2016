@@ -16,13 +16,18 @@ Core gameplay principles
 
 * Playable character implementation
   * First person view (w/ controls of view and headbobbing) *Assigned to Alex*
-  * Movement (jumping, etc) *Assigned to Kerby*
+   * View controls ✓
+   * Headbobbing 
+  * Movement (jumping, etc) *Assigned to Kerby* ✓
+   * Controls ✓
+   * Jumping ✓
 * Gameplay mechanics
   * Fog of war
-  * Falling tiles *Assigned to Hugo*
-  * Stay a while mechanic *Assigned to Antoine*
+  * Falling tiles *Assigned to Hugo* ✓
+  * Stay a while mechanic *Assigned to Antoine* ✓
 
 ###Possible traps/pick ups
 * Slow down time
-* Transparent structures
+* Super jump / speed
+* XRay
 
