@@ -55,4 +55,12 @@ public class TileController : MonoBehaviour
         }
 
     }
+
+    void OnTriggerEnter (Collider other)
+    {
+        if (other.tag == "DestroyTrigger")
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
