@@ -5,7 +5,6 @@ public class ViewControl : MonoBehaviour
 {
 
     // Speed at which the camera will catch up to the mouse pointer location
-    public float smoothing = 1.5f;
     public float mouseSensitivity = 100.0f;
     public float clampAngle = 80.0f;
  
