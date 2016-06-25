@@ -25,8 +25,10 @@ public class FloorTileGenerator : MonoBehaviour {
         floorArray = new GameObject[x * y];
         for (int i = 0; i < x * y; ++i)
         {
+            
             floorArray[i] = (GameObject)Instantiate(tile, new Vector3(i / y, 0, i % y), new Quaternion());
             floorArray[i].name = i / y + "," + i % y;
+            floorArray[i].transform.parent = gameObject.transform;
         }
 #if UNITY_EDITOR
         Generated = true;
