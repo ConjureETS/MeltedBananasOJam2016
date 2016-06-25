@@ -5,7 +5,6 @@ public class PlayerMovement : MonoBehaviour {
 
     public float speed = 0f;
     public float turn = 0f;
-    public GameObject camera;
     public Rigidbody characterRigidBody;
     //private Rigidbody rb;
 
@@ -13,7 +12,7 @@ public class PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Vector3 fowardVector = new Vector3(camera.transform.forward.x, 0, camera.transform.forward.z);
+        Vector3 fowardVector = new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z);
         if (Input.GetAxis("Vertical")>0)
         {
 
