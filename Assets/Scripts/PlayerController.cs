@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour {
         if (other.tag == "Trigger")
         {
             Debug.Log("Trigger entered");
-            gameController.GetComponent<GameController>().fallTriggerActivated = true;
+            //gameController.GetComponent<GameController>().fallTriggerActivated = true;
         }
     }
 }

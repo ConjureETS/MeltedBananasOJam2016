@@ -27,7 +27,7 @@ public class PostEffectScript : MonoBehaviour {
         }
         else if (blindnessRatio >= 0.1f)
         {
-            blindnessRatio -= 0.01f;
+            blindnessRatio -= 0.05f;
             blindness = 1 * blindnessRatio;
         }
        
