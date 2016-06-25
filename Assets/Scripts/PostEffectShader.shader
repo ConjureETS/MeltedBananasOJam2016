@@ -45,7 +45,8 @@
 			fixed4 frag (v2f i) : SV_Target
 			{
 				fixed4 col = tex2D(_MainTex, i.uv);
-				col.r = col.r+ _Blindness;
+				//half4 transparent = tex2D(_MainText, UNITY_PROJ_COORD(i));
+				col.r = col.r+_Blindness;
 				col.g = col.g+_Blindness;
 				col.b = col.b+_Blindness;
 				//col.a = (c.r + c.b + c.g) / 3;
