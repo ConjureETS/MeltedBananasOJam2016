@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody characterRigidBody;
 
     // Boost
-    public float boostFactor = 1f;
+    public float boostFactor;
     public float seconds;
     float boostDeadline;
     bool SpeedBoostTimerStart;
@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
     public float duration = 5.0f;
     float slowmoDeadline;
     private bool SlowmoTimerStart = false;
+
+
 	
     // Update is called once per frame
     void FixedUpdate()
@@ -51,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "SpeedBoost")
+        if (other.gameObject.CompareTag("SpeedBoost"))
         {
             other.gameObject.SetActive(false);
             SpeedBoostTimerStart = true;
@@ -68,7 +70,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (SpeedBoostTimerStart)
         {
-            boostFactor = 8.0f;
+            boostFactor = 2.0f;
             boostDeadline = Time.realtimeSinceStartup + seconds;
             SpeedBoostTimerStart = false;
         }

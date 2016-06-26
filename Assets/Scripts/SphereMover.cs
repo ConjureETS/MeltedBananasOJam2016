@@ -2,29 +2,26 @@
 using System.Collections;
 
 public class SphereMover : MonoBehaviour {
+    public Vector3 pointB;
+    private float rate;
 
-    public float speed = 2.0f;
-    private bool goingRight = false;
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void FixedUpdate()
-    {
-        if (goingRight)
-             transform.Translate (Vector2.right * speed * Time.deltaTime);
-         else
-             transform.Translate (-Vector2.right * speed * Time.deltaTime);
-         
-        if(transform.position.x >= transform.position.x + 4.0f) {
-            goingRight = false;
+     IEnumerator Start()
+     {
+         var pointA = transform.position;
+         while (true) {
+             yield return StartCoroutine(MoveObject(transform, pointA, pointB, 1.0f));
+             yield return StartCoroutine(MoveObject(transform, pointB, pointA, 1.0f));
          }
-         
-        if(transform.position.x <= transform.position.x -4) {
-            goingRight = true;
+     }
+  
+     IEnumerator MoveObject(Transform thisTransform, Vector3 startPos, Vector3 endPos, float time)
+     {
+         var i= 0.0f;
+         //rate = 1.0f/time;
+         while (i < 1.0f) {
+             i += Time.deltaTime * TimeManager.SlowFactor;
+             thisTransform.position = Vector3.Lerp(startPos, endPos, i);
+             yield return null; 
          }
-	}
+     }
 }

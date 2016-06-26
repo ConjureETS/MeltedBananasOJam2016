@@ -47,12 +47,12 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\FloorTileGenerator.cs" />
      <Compile Include="Assets\Scripts\JumpingPlayer.cs" />
-     <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\PostEffectScript.cs" />
-     <Compile Include="Assets\Scripts\SlowdownScript.cs" />
+     <Compile Include="Assets\Scripts\SeekerController.cs" />
      <Compile Include="Assets\Scripts\SphereMover.cs" />
      <Compile Include="Assets\Scripts\TileController.cs" />
+     <Compile Include="Assets\Scripts\TimeManager.cs" />
      <Compile Include="Assets\Scripts\ViewControl.cs" />
      <None Include="Assets\Shaders\WaterBlurFinal.shader" />
      <None Include="Assets\Shaders\WaterBlurModified.shader" />
