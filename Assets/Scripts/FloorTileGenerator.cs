@@ -29,6 +29,7 @@ public class FloorTileGenerator : MonoBehaviour {
             floorArray[i] = (GameObject)Instantiate(tile, new Vector3(i / y, 0, i % y), new Quaternion());
             floorArray[i].name = i / y + "," + i % y;
             floorArray[i].transform.parent = gameObject.transform;
+            floorArray[i].transform.position = new Vector3(floorArray[i].transform.position.x, 0, floorArray[i].transform.position.z);
         }
 #if UNITY_EDITOR
         Generated = true;
@@ -45,8 +46,8 @@ public class FloorTileGenerator : MonoBehaviour {
     {
         for (int i = j*y; i < (j+1)*y; ++i)
         {
-            ((TileController)floorArray[i].GetComponent<TileController>()).wasTouched = true;
-            //Destroy(floorArray[i],1);
+            // ((TileController)floorArray[i].GetComponent<TileController>()).wasTouched = true;
+            Destroy(floorArray[i],3);
         }
         if (j>x)
         {

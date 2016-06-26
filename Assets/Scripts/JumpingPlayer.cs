@@ -23,8 +23,6 @@ public class JumpingPlayer : MonoBehaviour
             isGrounded = true;
             Debug.Log(isGrounded);
         }
-        Debug.LogWarning(isGrounded);
-
     }
 
     // Update is called once per frame
