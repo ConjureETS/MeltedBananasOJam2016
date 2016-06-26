@@ -6,7 +6,11 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 0f;
     public float turn = 0f;
 
+    public float jump = 0f;
+    //private Rigidbody rb;
     public Rigidbody characterRigidBody;
+    private bool isGrounded;
+    Vector3 up;
 
     // Boost
     public float boostFactor;
@@ -32,22 +36,28 @@ public class PlayerMovement : MonoBehaviour
     private void ManageMovement()
     {
 
-        Vector3 fowardVector = new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z);
-        if (Input.GetAxis("Vertical") > 0)
+        Vector3 forwardVector = new Vector3(Camera.main.transform.forward.x, 0, Camera.main.transform.forward.z);
+        if (Input.GetAxis("Vertical") > 0 && isGrounded)
         {
-            characterRigidBody.velocity = (fowardVector * speed * boostFactor * Time.deltaTime);
+            characterRigidBody.velocity = (forwardVector * speed * boostFactor * Time.deltaTime);
         }
-        else if (Input.GetAxis("Vertical") < 0)
+        else if (Input.GetAxis("Vertical") < 0 && isGrounded)
         {
-            characterRigidBody.velocity = (-fowardVector * speed * boostFactor * Time.deltaTime);
+            characterRigidBody.velocity = (-forwardVector * speed * boostFactor * Time.deltaTime);
         }
-        if (Input.GetAxis("Horizontal") < 0)
+        if (Input.GetAxis("Horizontal") < 0 && isGrounded)
         {
-            characterRigidBody.velocity = (Vector3.Cross(-transform.up, fowardVector) * speed * boostFactor * Time.deltaTime );
+            characterRigidBody.velocity = (Vector3.Cross(-transform.up, forwardVector) * speed * boostFactor * Time.deltaTime );
         }
-        else if (Input.GetAxis("Horizontal") > 0)
+        else if (Input.GetAxis("Horizontal") > 0 && isGrounded)
         {
-            characterRigidBody.velocity = (Vector3.Cross(transform.up, fowardVector) * speed * boostFactor * Time.deltaTime);
+            characterRigidBody.velocity = (Vector3.Cross(transform.up, forwardVector) * speed * boostFactor * Time.deltaTime);
+        }
+
+        if (Input.GetButtonDown("Jump") && isGrounded)
+        { 
+            characterRigidBody.AddForce(0, jump * boostFactor, 0);
+            isGrounded = false;
         }
     }
 
@@ -63,6 +73,14 @@ public class PlayerMovement : MonoBehaviour
         {
             SlowmoTimerStart = true;
             other.gameObject.SetActive(false);
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            isGrounded = true;           
         }
     }
 
