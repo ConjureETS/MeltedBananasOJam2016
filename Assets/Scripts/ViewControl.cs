@@ -7,7 +7,7 @@ public class ViewControl : MonoBehaviour
     // Speed at which the camera will catch up to the mouse pointer location
     public float mouseSensitivity = 100.0f;
     public float clampAngle = 80.0f;
- 
+
     private float rotY = 0.0f;
     // rotation around the up/y axis
     private float rotX = 0.0f;
